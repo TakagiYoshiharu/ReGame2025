@@ -1,0 +1,18 @@
+#include "stdafx.h"
+#include "Background.h"
+
+Background::Background() {
+	modelRender.Init("Assets/modelData/stage.tkm");
+
+	physicsStaticObject.CreateFromModel(modelRender.GetModel(),modelRender.GetModel().GetWorldMatrix());
+	
+	//PhysicsWorld::GetInstance()->EnableDrawDebugWireFrame();
+}
+
+Background::~Background() {
+
+}
+
+void Background::Render(RenderContext& rc) {
+	modelRender.Draw(rc);
+}
